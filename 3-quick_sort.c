@@ -45,18 +45,6 @@ int partition(int *array, int low, int high, size_t size)
 }
 
 /**
- * quick_sort - sorts an array od integers in ascending order
- * @array: array to be sorted
- * @size: size of the array
- */
-void quick_sort(int *array, size_t size)
-{
-	if (array == NULL || size < 2)
-		return;
-	sort(array, 0, size - 1, size);
-}
-
-/**
  * sort - sorts the partitioned array using quick sort algorithm
  * @array: array to be sorted
  * @low: starting index
@@ -73,4 +61,17 @@ void sort(int *array, int low, int high, size_t size)
 		sort(array, low, pivot - 1, size);
 		sort(array, pivot + 1, high, size);
 	}
+}
+
+
+/**
+ * quick_sort - sorts an array od integers in ascending order
+ * @array: array to be sorted
+ * @size: size of the array
+ */
+void quick_sort(int *array, size_t size)
+{
+	if (array == NULL || size < 2)
+		return;
+	sort(array, 0, size - 1, size);
 }
